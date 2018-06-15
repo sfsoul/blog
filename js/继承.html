@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>es5继承</title>
+</head>
+<body>
+<script>
+    //父类构造函数
+    function Father(name){
+        this.name = name;
+    }
+
+    //父类原型上方法
+    Father.prototype.getName = function(){
+        console.log(this.name);
+    };
+
+
+    //子类构造函数
+    function Child(name,age){
+        Father.call(this,name); //为实例添加name属性
+        this.age = age;
+    }
+
+    Child.prototype = Object.create(Father.prototype); //使得 Child.prototype.__proto__ === Father.prototype
+    Child.prototype.constructor = Child; //重新修改Child.prototype指向
+    Child.prototype.getAge = function(){
+        console.log(this.age);
+    };
+
+    var child = new Child("zj",25);
+    console.log(child);
+
+    console.log(child.__proto__ === Child.prototype);
+    console.log(Child.prototype.__proto__ === Father.prototype);
+    console.log(child.constructor === Child);
+    console.log(Child.prototype.constructor === Child);
+</script>
+</body>
+</html>
