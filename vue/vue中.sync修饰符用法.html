@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>.sync修饰符用法</title>
+</head>
+<body>
+<div id="app">
+    <!--未使用.sync修饰符-->
+    <custom-component :title="title" @modify-title="modifyTitle"></custom-component>
+
+    <!--使用.sync修饰符-->
+    <custom-title :title1.sync="title1"></custom-title>
+
+    <!--使用.sync修饰符等价于下面-->
+    <!--<custom-title :title1="title1"-->
+                  <!--@update:title1="title1 = arguments[0]"></custom-title>-->
+</div>
+<script src="../lib/vue.js"></script>
+<script>
+    Vue.component('custom-component', {
+        template:`
+            <div class="child">
+                <h3>{{title}}</h3>
+                <button @click="modifyTitle">修改父组件title</button>
+            </div>
+        `,
+        data(){
+            return {
+        		msg: 'Hello, ZJ'
+            }
+        },
+        props: {
+            title: String
+        },
+        methods:{
+            // 子组件通过$emit分发事件修改父组件的值
+	        modifyTitle(){
+                this.$emit('modify-title', this.msg)
+            }
+        }
+    })
+
+    Vue.component('custom-title', {
+        template:`
+            <div class="child">
+                <h1>{{title1}}</h1>
+                <button @click="modify">更改父组件的值(sync)</button>
+            </div>
+        `,
+        data(){
+            return{
+                newTitle: 'sync修饰符的妙用'
+            }
+        },
+        props:{
+            title1: String
+        },
+        methods:{
+	        modify(){
+                this.$emit('update:title1', this.newTitle)
+            }
+        }
+    })
+
+    window.vm = new Vue({
+        el:"#app",
+        data:{
+            title: 'Hello Vue!',
+            title1: 'Hello Sync!'
+        },
+        methods:{
+	        modifyTitle(val){
+	            this.title = val;
+            }
+        }
+    })
+</script>
+</body>
+</html>
