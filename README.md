@@ -7,3 +7,4 @@
 - [let和const](https://github.com/sfsoul/blog/issues/30)
 - [箭头函数](https://github.com/sfsoul/blog/issues/31)
 - [迭代器与for...of](https://github.com/sfsoul/blog/issues/33)
+- [Promise](https://github.com/sfsoul/blog/issues/36)
