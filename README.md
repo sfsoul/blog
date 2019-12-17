@@ -2,6 +2,7 @@
 
 ## JS基础系列
 > 回归`js`基础，针对性的复习巩固基础知识
+- [事件循环机制](https://github.com/sfsoul/blog/issues/8)
 
 ## ES6系列
 - [let和const](https://github.com/sfsoul/blog/issues/30)
