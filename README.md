@@ -16,3 +16,6 @@
 
 ## MacTips
 - [快速查看Mac IP地址的技巧](https://github.com/sfsoul/blog/issues/43)
+
+## Linux相关
+- [Linux Command](https://github.com/sfsoul/blog/issues/39)
