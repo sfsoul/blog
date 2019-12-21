@@ -10,6 +10,7 @@
 - [迭代器与for...of](https://github.com/sfsoul/blog/issues/33)
 - [Promise](https://github.com/sfsoul/blog/issues/36)
 - [async/await](https://github.com/sfsoul/blog/issues/44)
+- [Set与Map](https://github.com/sfsoul/blog/issues/46)
 
 ## JavaScript Topic
 - [JavaScript Topic](https://github.com/sfsoul/blog/issues/40)
