@@ -11,6 +11,7 @@
 - [Promise](https://github.com/sfsoul/blog/issues/36)
 - [async/await](https://github.com/sfsoul/blog/issues/44)
 - [Set与Map](https://github.com/sfsoul/blog/issues/46)
+- [模板字符串](https://github.com/sfsoul/blog/issues/64)
 
 ## JavaScript Topic
 - [JavaScript Topic](https://github.com/sfsoul/blog/issues/40)
